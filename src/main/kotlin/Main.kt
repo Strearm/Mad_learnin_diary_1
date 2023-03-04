@@ -6,7 +6,7 @@ fun main(args: Array<String>) {
    game(generateNumber())
 }
 
-//loops input until user guesses the correct number
+//loops input until user guesses correct number
 fun game(toguess: Array<Int>){
    printArray(toguess)
    println("Enter a 4 digit number: ")
