@@ -2,14 +2,14 @@ fun main(args: Array<String>) {
    println("-------THE NUMBER GUESSING GAME!-------\n")
    println("Try to guess the 4 digit number using the hints -> n:m")
    println("n = number of correct digits, m = digits in correct position\n")
-   println("GAME START:")
+   println("!GAME START!")
    game(generateNumber())
 }
 
 //loops input until user guesses correct number
 fun game(toguess: Array<Int>){
-   printArray(toguess)
-   println("Enter a 4 digit number: ")
+   printArray(toguess) //here for testing purposes
+   println("Enter a 4 digit number")
    var counter = 1
    while(true){
       print("User Input: ")
@@ -41,18 +41,12 @@ fun generateNumber(): Array<Int> {
 
 //checks if the input is made of numbers and exactly 4 digits long
 fun checkInput(number: String): Boolean{
-   while(true){
-      try{
-         Integer.valueOf(number)
-         if(number.length > 4 || number.length < 4){
-            println("Please enter a 4 digit Number")
-            return false
-         }
-         return true
-      }catch(e: Exception){
-         println("Please enter a 4 Digit Number")
-         return false
-      }
+   if(number.length == 4 && number.toIntOrNull() != null){
+      return true
+   }
+   else{
+      println("please enter a 4 digit number!")
+      return false
    }
 }
 
