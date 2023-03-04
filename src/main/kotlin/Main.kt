@@ -68,7 +68,6 @@ fun inputToArray(input: Int): Array<Int> {
       divisor /= 10
    }
    return guessArray
-
 }
 
 //checks if a digit of the guess matches and increments the counters
