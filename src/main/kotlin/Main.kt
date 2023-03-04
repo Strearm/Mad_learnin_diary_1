@@ -70,16 +70,13 @@ fun matchingDigits(toguess: Array<Int>, guess: Array<Int>): Array<Int>{
    var digitAndPlace = 0
    val alreadyAddedNumbers = mutableListOf<Int>()
    for(i in toguess.indices){
-      if(guess[i] == toguess[i]){
-         digitAndPlace++
+      if(toguess.contains(guess[i]) && !alreadyAddedNumbers.contains(guess[i]))
+      {
+         justDigit++
+         alreadyAddedNumbers.add(guess[i])
       }
-      for(j in toguess.indices){
-         if(guess[i] == toguess[j]){
-            if(!alreadyAddedNumbers.contains(guess[i])){
-               justDigit++
-               alreadyAddedNumbers.add(guess[i])
-            }
-         }
+      if(toguess[i] == guess[i]){
+         digitAndPlace++
       }
    }
    return arrayOf(justDigit,digitAndPlace)
